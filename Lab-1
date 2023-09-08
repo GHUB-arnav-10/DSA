@@ -1,0 +1,178 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO6QNf4C7Ab2PeBIJZ0FpW9"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1vz5I1W1RG_M"
+      },
+      "outputs": [],
+      "source": [
+        "from tabulate import tabulate"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "For AND gate:"
+      ],
+      "metadata": {
+        "id": "jgZveB1bRwjL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x1 = []\n",
+        "x2 = []\n",
+        "w1 = []\n",
+        "w2 = []\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  x1.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  x2.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  w1.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  w2.append(a)\n",
+        "t = 2\n",
+        "print(\"x1    x2    w1   w2     t     O\")\n",
+        "for i in range(len(x1)):\n",
+        "    if ( x1[i]*w1[i] + x2[i]*w2[i] ) >= t:\n",
+        "        print(x1[i],'   ',x2[i],'   ',w1[i],'   ',w2[i],'   ',t,'   ', 1)\n",
+        "    else:\n",
+        "        print(x1[i],'   ',x2[i],'   ',w1[i],'   ',w2[i],'   ',t,'   ', 0)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "m0Q5tyeJRmsr",
+        "outputId": "692953a7-3a6d-4ab4-ba8d-1b197a0453c1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "0\n",
+            "1\n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "x1    x2    w1   w2     t     O\n",
+            "0     0     1     1     2     0\n",
+            "0     1     1     1     2     0\n",
+            "1     0     1     1     2     0\n",
+            "1     1     1     1     2     1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "For OR gate:"
+      ],
+      "metadata": {
+        "id": "Obz2be6-R5nU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x1 = []\n",
+        "x2 = []\n",
+        "w1 = []\n",
+        "w2 = []\n",
+        "t = 1\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  x1.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  x2.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  w1.append(a)\n",
+        "for i in range(0,4):\n",
+        "  a=int(input())\n",
+        "  w2.append(a)\n",
+        "print(\"x1    x2    w1   w2     t     O\")\n",
+        "for i in range(len(x1)):\n",
+        "    if ( x1[i]*w1[i] + x2[i]*w2[i] ) >= t:\n",
+        "        print(x1[i],'   ',x2[i],'   ',w1[i],'   ',w2[i],'   ',t,'   ', 1)\n",
+        "    else:\n",
+        "        print(x1[i],'   ',x2[i],'   ',w1[i],'   ',w2[i],'   ',t,'   ', 0)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ITNDo7QVR8RE",
+        "outputId": "d5626e7b-934e-4440-8b1e-ee65e95f64ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "0\n",
+            "1\n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "x1    x2    w1   w2     t     O\n",
+            "0     0     1     1     1     0\n",
+            "0     1     1     1     1     1\n",
+            "1     0     1     1     1     1\n",
+            "1     1     1     1     1     1\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
